@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sach Tham Gia Doi Robocon Khoa CNTT</title>
+    <!--Bootstrap CSS-->
+    <link href="../DE KT20.4/css/bootstrap.min.css" rel="stlesheet">
+    <link rel="stylesheet" href="../DE KT20.4/js/bootstrap.min.js">
+    <link href="../DE KT20.4/js/jquery-3.7.1.min.js" </head>
+    <style>
+        .header {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .header img {
+            height: 70px;
+        }
+        
+        .header h1 {
+            margin: 10px 0;
+        }
+        
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .modal-header,
+        .modal-footer {
+            justify-content: center;
+        }
+    </style>
+
+    <body>
+        <div class='header'>
+            <img src="../DE KT20.4/HEADER.PNG" alt="IUH Logo">
+            <h3>TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP TP. HỒ CHÍ MINH</h3>
+            <H4>KHOA CÔNG NGHỆ THÔNG TIN</H4>
+        </div>
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" data-bsbtoggle="modal" data bs-target="#registrationModal">Đăng ký</button>
+            </div>
+
+            <h2 class="text-center mt-4"> DANH SÁCH THAM GIA ĐỘI ROBOCON KHOA CNTT </h2>
+            <table class="table table-bordered mt-4" id="member List">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã thành viên</th>
+                        <th>Họ tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày tham gia</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>K16-123456789</td>
+                        <td>Tran Thanh Kha</td>
+                        <td>DHKTPM16ATT</td>
+                        <td>22/02/2022</td>
+                        <td>0909-123-123</td>
+                        <td>thanhkha@iuh.edu.vn</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between mt-4" <p>SVTH:.........</p>
+                <P>Mã số sinh viên:...</P>
+                <p>Lớp: DHKTPM16.......</p>
+            </div>
+            <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registrationModalLable">THÔNG TIN CÁ NHÂN</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div>
+                        <div class="modal-body">
+                            <from id="registrationForm">
+                                <div class="mb-3">
+                                    <label for="memberld" class="form-label">Mã thành viên:</label>
+                                    <input type="text" class="form-control" id="memberld" placeholder="Mã K16-123456789" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Họ tên:</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Họ tên: Tran Anh Dung" required>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="classld" class="form-label">Lớp:</label>
+                                    <input type="text" class="form-control" id="classld" placeholder="Lớp: DHKTPM16ATT" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phoneNumber" class="form-label">Số điện thoại:</label>
+                                    <input type="text" class="form-control" id="phoneNumber" placeholder="0xxx-xxx-xxx" required>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="xxxxxx@iuh.edu.vn" required>
+                                </div>
+                                </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" id="saveBtn">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                        let serialNumber = 2;
+                        $('#saveBtn').click(function) {
+                            // Validate the form
+                            let isValid = true;
+                            let memberld = $('#memberld').val();
+                            let fullName = $('#fullName').val();
+                            let classld = $('#classld').val();
+                            let joinDate = $('#joinDate').val();
+                            let phoneNumber = $('#phoneNumber').val();
+                            let email = $('#email').val();
+
+                            if (!/^K16-\d{9}$/.test(memberld)) {
+                                isValid = false;
+                                alert("Mã thành viên không hợp lệ!");
+                            }
+                            if (!/^[A-Z][a-z]+\s[A-Z][a-z]+\s[A-Z][a-z]+$/.test(fullName)) {
+                                isValid = false
+                            }
+                        }
+                    }
+        </script>
+
+</html>
